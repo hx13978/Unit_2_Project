@@ -8,7 +8,27 @@
   <body>
     <h1>Welcome! <%=userInfo.name%>'s Shopping List</h1>
 
+    <nav>
+        <form action="/list" method="POST">
+            Add Shopping Item: <input type="text" name="item" /><br/>
+            Category: <input type="text" name="category" /><br/>
+            <input type="submit" name="" value="Add Item"/>
+            <input type ="hidden" name="userId" value= "<%=userInfo.id%>"/>
+        </form>
     
+        <ul class="list">
+            <% userList.forEach((item) => { %>
+                <li>
+                    <%=item.item%> 
+                     <!--  ADD DELETE FORM  -->
+                    <form action="/list/<%= item.id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete"/>
+                    </form><br/>
+                </li>
+            <% }) %>
+        </ul>
+
+    </nav>
 
   </body>
 </html>

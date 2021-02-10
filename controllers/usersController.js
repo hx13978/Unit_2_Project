@@ -30,10 +30,19 @@ router.get('/profile/:id', (req, res) => {
 */
 router.get("/profile/:id", (req, res) => {
     User.findByPk(req.params.id) .then((thisUser) =>{
-    res.render("users/profile.ejs", {
-        userInfo: thisUser, //the fruit object
-			index: req.params.id    
-    })
+        List.findAll({
+            where: {
+                userId: req.params.id
+            }
+        })
+        .then((userList) => {
+            res.render("users/profile.ejs", {
+                userInfo: thisUser,
+                index: req.params.id,
+                userList: userList,  
+            })
+        })
+
     });
 })
 

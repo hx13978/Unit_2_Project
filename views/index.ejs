@@ -9,7 +9,12 @@
 <body>
     <h1>Create Shopping List</h1>
     <nav>
-        <a href="/list/new">Add a new item to your list</a>
+        <nav>
+            <form action="/list" method="POST">
+                Add Shopping Item: <input type="text" name="item" /><br/>
+                Category: <input type="text" name="category" /><br/>
+                <input type="submit" name="" value="Add Item"/>
+            </form>
     
         <ul>
             <% list.forEach((list) => { %>
