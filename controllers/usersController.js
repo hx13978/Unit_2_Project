@@ -23,28 +23,16 @@ router.post('/', (req, res)=>{
 router.get('/login', (req, res) => {
     res.render('users/login.ejs');
 });
-/*
-router.get('/profile/:id', (req, res) => {
-    res.render('users/profile.ejs');
-});
-*/
-router.get("/profile/:id", (req, res) => {
-    User.findByPk(req.params.id) .then((thisUser) =>{
-        List.findAll({
-            where: {
-                userId: req.params.id
-            }
-        })
-        .then((userList) => {
-            res.render("users/profile.ejs", {
-                userInfo: thisUser,
-                index: req.params.id,
-                userList: userList,  
-            })
-        })
 
+ router.get("/profile/:id", (req, res) => {
+    User.findByPk(req.params.id) .then((thisUser) =>{
+    res.render("users/profile.ejs", {
+        userInfo: thisUser, 
+		index: req.params.id    
+    })
     });
 })
+
 
 router.post('/login', (req, res)=>{
     User.findOne({
@@ -57,7 +45,14 @@ router.post('/login', (req, res)=>{
     })
 });
 
-
+router.put("/profile/:id", (req, res) => {
+    User.update(req.body, {
+        where: { id: req.params.id },
+        returning: true,
+    }).then((user) => {
+        res.redirect("/users/profile/" + req.params.id);
+    });
+});
 
 
 // Delete route to the User database using sequalize
