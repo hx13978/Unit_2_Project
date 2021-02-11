@@ -24,14 +24,14 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res)=>{
     console.log("console log  " + req.body);
     List.create(req.body).then((newItem) => {
-    res.redirect("/list/" + req.params.id);
+    res.redirect("/list/" + req.body.userId);
  });
 });
 
 
-router.delete("/:id", (req, res) => {
-    List.destroy({ where: { id: req.params.id } }).then(() => {
-        res.redirect("/list/" + req.params.id);
+router.delete("/:listId/:userId", (req, res) => {
+    List.destroy({ where: { id: req.params.listId } }).then(() => {
+        res.redirect("/list/" + req.params.userId);
     });
 });
 

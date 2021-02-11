@@ -23,7 +23,7 @@
                     <!--Determines which route to go -->
                     <a href="/list/<%= list.id %>"><%= list.item %></a>
                     <!--  ADD DELETE FORM HERE-->
-                    <form action="/list/<%= list.id %>?_method=DELETE" method="POST">
+                    <form action="/list/<%= list.id %>/<%= list.userId %>?_method=DELETE" method="POST">
                         <input type="submit" value="DELETE"/>
                     </form>
                 </li>

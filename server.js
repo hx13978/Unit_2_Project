@@ -25,7 +25,6 @@ app.get('/', (req, res) => {
     res.render('users/index.ejs')
 });
 
-
 app.listen(process.env.PORT, () => {
     console.log("I am listening");
   });
