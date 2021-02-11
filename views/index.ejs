@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <h1>Create Shopping List</h1>
+    <h1>Shopping List</h1>
     <nav>
-        <nav>
+        
             <form action="/list" method="POST">
                 Add Shopping Item: <input type="text" name="item" /><br/>
                 Category: <input type="text" name="category" /><br/>
@@ -21,14 +21,18 @@
             <% list.forEach((list) => { %>
                 <li>
                     <!--Determines which route to go -->
-                    <a href="/list/<%= list.id %>"><%= list.item %></a>
+                    <a href="/list/<%= list.id %>">
+                        <%= list.item %> - <%= list.category %>
+                    </a>
                     <!--  ADD DELETE FORM HERE-->
                     <form action="/list/<%= list.id %>/<%= list.userId %>?_method=DELETE" method="POST">
-                        <input type="submit" value="DELETE"/>
+                        <input type="submit" value="DELETE" />
                     </form>
                 </li>
             <% }) %>
         </ul>
-    </nav>
+        <br /><br />
+        <a href="/users">Home Page</a>
+    </nav> 
 </body>
 </html>

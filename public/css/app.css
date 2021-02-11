@@ -1,0 +1,16 @@
+body {
+    color: red;
+}
+
+form {
+    color: green;
+}
+
+a {
+    color: blue;
+}
+
+input {
+    color: purple;
+    font-weight: bold;
+}
