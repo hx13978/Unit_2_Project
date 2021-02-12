@@ -28,7 +28,7 @@ router.post('/', (req, res)=>{
  });
 });
 
-
+////Delete shopping list ITEM from table using sequelize
 router.delete("/:listId/:userId", (req, res) => {
     List.destroy({ where: { id: req.params.listId } }).then(() => {
         res.redirect("/list/" + req.params.userId);

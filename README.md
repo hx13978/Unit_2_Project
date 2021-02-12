@@ -2,14 +2,17 @@
 
 Attched is a completed full-stack application for an interactive Shopping List website developed by a beginner programmer. The website will allow a user to create an account and build a shopping list to use for their next trip to the store.
 
-Instructions
+Instructions:
 
 Upon loading the website, the user will be ask to either login as an existing user, or sign up as new user, with a name and password.  The user will then be taken to their profile page where they can edit their name and password information, delete themselves as a user, or create a shopping list by clicking on a link...the fun part of the website! When the user clicks on the Create Shopping List link, they will be taken to a webpage to create/edit their shopping list.  Once the user in on their Shopping List page they can add an item to their shopping list by typing in a shopping item and category (if they like, but not needed), and then click on the Add Item button...which will immediately add the item to their list. If the user would like to delete an item form their list, all they have to do is click on the DELETE button directly below the list item, and the item will remove itself from the list. Once the user is done creating/using their list, they can close the webpage, or click on the Home Page link at the bottom of their shopping list to log back in under another user if they have multiple lists...either way your shopping list(s) will be waiting for you when you log back in! Enjoy the website and no more worring about leaving your shopping list at home!
 
-Link To App
+Link To App:
 https://hx13978project2.herokuapp.com/
 
-Prerequisites
+Wireframes:
+[wireframes]()
+
+Prerequisites:
 
     HTML
     CSS, Responsive Web Design
@@ -18,7 +21,7 @@ Prerequisites
     Sequelize
     CRUD -Create, Read, Update, Delete
 
-User Stories
+User Stories:
 
 -As a user, I want a website where I can create a shopping list at home, and then access it when I'm out shopping.
 -As a new user, I want to sign up with a name and password, so that I can create a shopping list with some security.
@@ -31,7 +34,7 @@ User Stories
 -As a user, I would like for my password to be encrypted for security purposes.
 -As a user, I would like to see an improved layout of the pages with CSS.
 
-Next Steps
+Next Steps:
 
 Future improvements that I would like to incorporate to this app would be:
 -Allow a user to create multiple lists

@@ -10,13 +10,13 @@
     <h1>Shopping List</h1>
     <nav>
         
-            <form action="/list" method="POST">
-                Add Shopping Item: <input type="text" name="item" /><br/>
-                Category: <input type="text" name="category" /><br/>
-                <input type="submit" name="" value="Add Item"/>
-                <input type="hidden" name="userId" value="<%= userId%>" />
-            </form>
-    
+        <form action="/list" method="POST">
+            Add Shopping Item: <input type="text" name="item" /><br/>
+            Category: <input type="text" name="category" /><br/>
+            <input type="submit" name="" value="Add Item"/>
+            <input type="hidden" name="userId" value="<%= userId%>" />
+        </form>
+
         <ul>
             <% list.forEach((list) => { %>
                 <li>
